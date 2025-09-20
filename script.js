@@ -1,11 +1,6 @@
 //Selecionando os elementos do formulário
 const amount = document.getElementById("amount")
 
-amount.oninput = ()=>{
-    let value = amount.value.replace(/\D/g, "")
-
-    amount.value = value
-}
 //Captura o evento de input para formatar o valor.
 amount.oninput = () =>{
     //Obtém o valor atual do input e remove os caracteres não numéricos.
@@ -25,5 +20,6 @@ function formatCurrencyBRL(value){
         currency: "BRL",
     })
 
+    //Retorna o valor formatado
     return value
 }
