@@ -134,7 +134,20 @@ function expenseAdd (newExpense) {
 
             // Incrementa o valor total
             total += Number(value)
-        }
+
+            // Cria a span pra adicionar o R$ formatado
+            const symbolBRL = document.createElement("small")
+            symbolBRL.textContent = "R$"
+
+            // Formata o valor e remove o R$ que será exibido pela small com um estilo customizado
+            total = formatCurrencyBRL(total).toUpperCase().replace("R$", "")
+
+            // Limpa o conteúdo do elemento
+            expensesTotal.innerHTML = ""
+
+            // Adiciona o símbolo da moeda e o valor total formatado
+            expensesTotal.append(symbolBRL, total)
+            }
 
         //
         expensesTotal.textContent = total
